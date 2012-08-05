@@ -1,0 +1,117 @@
+﻿#container
+{
+	width:920px;
+	
+	height:1000px;
+	margin:10px;
+	border-radius:34px;
+	box-shadow: 10px 10px 10px #888888;
+	
+}
+
+#header1
+{
+	margin:10px;
+	margin-top:20px;
+	width:900px;
+	height:100px;
+	background-color:gray;
+}
+
+#footer
+{
+	
+//margin-top:600px;
+	margin-left:30px;
+	margin-bottom:20px;
+	font-family:"Courier New", Courier, monospace;
+	font-style:italic;
+	font-size:medium;
+	font:menu;
+	width:920px;
+	height:50px;
+	border-radius:40px;
+	background: url(images/img06.jpg) no-repeat left top;
+	box-shadow: 10px 10px 10px #888888;
+
+	
+
+}
+
+#footer p
+{
+	margin:10px;
+}
+#navigation1
+{
+	margin-left:10px;
+	margin-top:20px;
+	//height:500px;
+	width:200px;
+	float:left;
+	 border-bottom-style:solid;
+
+}
+
+#blogpost
+{
+
+//	height: 540px;
+	width:200px;
+	background-color:aqua;
+	float:right;
+	margin-bottom:5px;
+	margin-top:60px;
+}
+
+#blogdiv
+{
+	
+	width:200px;
+	height:270px;
+	background-color:blue;
+}
+#login
+{
+	
+	float:right;
+	width:200px;
+	height:200px;
+	background-color:fuchsia;
+	border:thick;
+
+	
+}
+
+#left
+{
+	margin:10px;
+	height:500px;
+	width:200px;
+	background-color:blue;
+	float:right;
+}
+
+#main
+{
+	
+	 
+}
+#headerbg1
+{
+	width:900px;
+	height:50px;
+	margin:10px;
+	box-shadow: 10px 10px 10px #888888;
+	border-radius:34px;
+	background: url(images/img05.jpg) no-repeat left top;
+
+	
+}
+
+#videos
+{
+	
+	background-color:gray;
+	height:270px;
+}

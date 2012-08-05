@@ -1,0 +1,293 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\colortbl ;\red0\green0\blue255;}
+{\*\generator Msftedit 5.41.21.2509;}\viewkind4\uc1\pard\sa200\sl276\slmult1\lang9\f0\fs22 USERBLOG Table \par
+-- phpMyAdmin SQL Dump\par
+-- version 3.2.0.1\par
+-- {\field{\*\fldinst{HYPERLINK "http://www.phpmyadmin.net"}}{\fldrslt{\ul\cf1 http://www.phpmyadmin.net}}}\f0\fs22\par
+--\par
+-- Host: localhost\par
+-- Generation Time: Jul 15, 2012 at 01:28 PM\par
+-- Server version: 5.1.36\par
+-- PHP Version: 5.3.0\par
+\par
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";\par
+\par
+--\par
+-- Database: `dasa`\par
+--\par
+\par
+-- --------------------------------------------------------\par
+\par
+--\par
+-- Table structure for table `userblog`\par
+--\par
+\par
+CREATE TABLE IF NOT EXISTS `userblog` (\par
+  `blogid` int(100) NOT NULL AUTO_INCREMENT,\par
+  `blogtitle` varchar(100) NOT NULL,\par
+  `text` varchar(100) NOT NULL,\par
+  `commentid` int(100) NOT NULL,\par
+  PRIMARY KEY (`blogid`),\par
+  UNIQUE KEY `text` (`text`,`commentid`)\par
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;\par
+\par
+--\par
+-- Dumping data for table `userblog`\par
+--\par
+\par
+INSERT INTO `userblog` (`blogid`, `blogtitle`, `text`, `commentid`) VALUES\par
+(10, 'Narayana Naho', 'Narayana Namo', 0),\par
+(9, '', '', 0),\par
+(4, 'Shrikumar', 'Hello how are you doing??', 0),\par
+(5, 'Shri', 'I am doing fine', 0),\par
+(6, 'Raghavendra', 'Poojyaya raghavendraya!! ', 0),\par
+(8, 'Narayana', 'Hello how are you???', 0),\par
+(11, 'Hare Shrinivasa', 'Hare Shrinivasa', 0);\par
+=================================================================================\par
+-- phpMyAdmin SQL Dump\par
+-- version 3.2.0.1\par
+-- {\field{\*\fldinst{HYPERLINK "http://www.phpmyadmin.net"}}{\fldrslt{\ul\cf1 http://www.phpmyadmin.net}}}\f0\fs22\par
+--\par
+-- Host: localhost\par
+-- Generation Time: Jul 15, 2012 at 01:30 PM\par
+-- Server version: 5.1.36\par
+-- PHP Version: 5.3.0\par
+\par
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";\par
+\par
+--\par
+-- Database: `dasa`\par
+--\par
+\par
+-- --------------------------------------------------------\par
+\par
+--\par
+-- Table structure for table `blog`\par
+--\par
+\par
+CREATE TABLE IF NOT EXISTS `blog` (\par
+  `blogid` int(11) NOT NULL AUTO_INCREMENT,\par
+  `blogdate_timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\par
+  `blogtitle` varchar(200) DEFAULT NULL,\par
+  PRIMARY KEY (`blogid`)\par
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;\par
+\par
+--\par
+-- Dumping data for table `blog`\par
+--\par
+==================================================================================\par
+\par
+-- phpMyAdmin SQL Dump\par
+-- version 3.2.0.1\par
+-- {\field{\*\fldinst{HYPERLINK "http://www.phpmyadmin.net"}}{\fldrslt{\ul\cf1 http://www.phpmyadmin.net}}}\f0\fs22\par
+--\par
+-- Host: localhost\par
+-- Generation Time: Jul 15, 2012 at 01:30 PM\par
+-- Server version: 5.1.36\par
+-- PHP Version: 5.3.0\par
+\par
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";\par
+\par
+--\par
+-- Database: `dasa`\par
+--\par
+\par
+-- --------------------------------------------------------\par
+\par
+--\par
+-- Table structure for table `blogdetails`\par
+--\par
+\par
+CREATE TABLE IF NOT EXISTS `blogdetails` (\par
+  `blogid` int(11) NOT NULL,\par
+  `bloguserid` int(11) DEFAULT NULL,\par
+  PRIMARY KEY (`blogid`),\par
+  KEY `bloguserid` (`bloguserid`)\par
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;\par
+\par
+--\par
+-- Dumping data for table `blogdetails`\par
+--\par
+==================================================================================\par
+-- phpMyAdmin SQL Dump\par
+-- version 3.2.0.1\par
+-- {\field{\*\fldinst{HYPERLINK "http://www.phpmyadmin.net"}}{\fldrslt{\ul\cf1 http://www.phpmyadmin.net}}}\f0\fs22\par
+--\par
+-- Host: localhost\par
+-- Generation Time: Jul 15, 2012 at 01:30 PM\par
+-- Server version: 5.1.36\par
+-- PHP Version: 5.3.0\par
+\par
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";\par
+\par
+--\par
+-- Database: `dasa`\par
+--\par
+\par
+-- --------------------------------------------------------\par
+\par
+--\par
+-- Table structure for table `comment`\par
+--\par
+\par
+CREATE TABLE IF NOT EXISTS `comment` (\par
+  `commentid` int(11) NOT NULL,\par
+  `commentblogid` int(11) DEFAULT NULL,\par
+  `commenttext` varchar(200) DEFAULT NULL,\par
+  `comment_timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\par
+  PRIMARY KEY (`commentid`),\par
+  KEY `commentblogid` (`commentblogid`)\par
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;\par
+\par
+--\par
+-- Dumping data for table `comment`\par
+--\par
+==================================================================================\par
+\par
+-- phpMyAdmin SQL Dump\par
+-- version 3.2.0.1\par
+-- {\field{\*\fldinst{HYPERLINK "http://www.phpmyadmin.net"}}{\fldrslt{\ul\cf1 http://www.phpmyadmin.net}}}\f0\fs22\par
+--\par
+-- Host: localhost\par
+-- Generation Time: Jul 15, 2012 at 01:31 PM\par
+-- Server version: 5.1.36\par
+-- PHP Version: 5.3.0\par
+\par
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";\par
+\par
+--\par
+-- Database: `dasa`\par
+--\par
+\par
+-- --------------------------------------------------------\par
+\par
+--\par
+-- Table structure for table `commentdetails`\par
+--\par
+\par
+CREATE TABLE IF NOT EXISTS `commentdetails` (\par
+  `comment_detail_id` int(11) NOT NULL,\par
+  `comment_blog_id` int(11) DEFAULT NULL,\par
+  `comment_user_id` int(11) DEFAULT NULL,\par
+  PRIMARY KEY (`comment_detail_id`),\par
+  KEY `comment_blog_id` (`comment_blog_id`),\par
+  KEY `comment_user_id` (`comment_user_id`)\par
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;\par
+\par
+--\par
+-- Dumping data for table `commentdetails`\par
+--\par
+==================================================================================\par
+-- phpMyAdmin SQL Dump\par
+-- version 3.2.0.1\par
+-- {\field{\*\fldinst{HYPERLINK "http://www.phpmyadmin.net"}}{\fldrslt{\ul\cf1 http://www.phpmyadmin.net}}}\f0\fs22\par
+--\par
+-- Host: localhost\par
+-- Generation Time: Jul 15, 2012 at 01:31 PM\par
+-- Server version: 5.1.36\par
+-- PHP Version: 5.3.0\par
+\par
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";\par
+\par
+--\par
+-- Database: `dasa`\par
+--\par
+\par
+-- --------------------------------------------------------\par
+\par
+--\par
+-- Table structure for table `login`\par
+--\par
+\par
+CREATE TABLE IF NOT EXISTS `login` (\par
+  `id` int(11) NOT NULL,\par
+  `username` varchar(50) NOT NULL,\par
+  `password` varchar(50) NOT NULL,\par
+  PRIMARY KEY (`username`),\par
+  UNIQUE KEY `id` (`id`)\par
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;\par
+\par
+--\par
+-- Dumping data for table `login`\par
+--\par
+\par
+INSERT INTO `login` (`id`, `username`, `password`) VALUES\par
+(0, 'sbenkal@gmail.com', 'benkal');\par
+==================================================================================\par
+-- phpMyAdmin SQL Dump\par
+-- version 3.2.0.1\par
+-- {\field{\*\fldinst{HYPERLINK "http://www.phpmyadmin.net"}}{\fldrslt{\ul\cf1 http://www.phpmyadmin.net}}}\f0\fs22\par
+--\par
+-- Host: localhost\par
+-- Generation Time: Jul 15, 2012 at 01:32 PM\par
+-- Server version: 5.1.36\par
+-- PHP Version: 5.3.0\par
+\par
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";\par
+\par
+--\par
+-- Database: `dasa`\par
+--\par
+\par
+-- --------------------------------------------------------\par
+\par
+--\par
+-- Table structure for table `userdb`\par
+--\par
+\par
+CREATE TABLE IF NOT EXISTS `userdb` (\par
+  `firstname` varchar(30) NOT NULL,\par
+  `lastname` varchar(30) NOT NULL,\par
+  `emailid` varchar(30) NOT NULL,\par
+  `dateofbirth` varchar(10) NOT NULL,\par
+  `password` varchar(30) NOT NULL,\par
+  `loginid` int(11) NOT NULL,\par
+  PRIMARY KEY (`loginid`),\par
+  UNIQUE KEY `emailid` (`emailid`)\par
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;\par
+\par
+--\par
+-- Dumping data for table `userdb`\par
+--\par
+\par
+INSERT INTO `userdb` (`firstname`, `lastname`, `emailid`, `dateofbirth`, `password`, `loginid`) VALUES\par
+('Shrikumar', 'Benkal', 'sbenkal@gmail.com', '17091987', 'benkal', 0);\par
+=================================================================================\par
+\par
+-- phpMyAdmin SQL Dump\par
+-- version 3.2.0.1\par
+-- {\field{\*\fldinst{HYPERLINK "http://www.phpmyadmin.net"}}{\fldrslt{\ul\cf1 http://www.phpmyadmin.net}}}\f0\fs22\par
+--\par
+-- Host: localhost\par
+-- Generation Time: Jul 15, 2012 at 01:32 PM\par
+-- Server version: 5.1.36\par
+-- PHP Version: 5.3.0\par
+\par
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";\par
+\par
+--\par
+-- Database: `dasa`\par
+--\par
+\par
+-- --------------------------------------------------------\par
+\par
+--\par
+-- Table structure for table `userinfo`\par
+--\par
+\par
+CREATE TABLE IF NOT EXISTS `userinfo` (\par
+  `userinfo_id` int(11) NOT NULL,\par
+  `userinfo_blog_id` int(11) DEFAULT NULL,\par
+  `userinfo_comment_id` int(11) DEFAULT NULL,\par
+  PRIMARY KEY (`userinfo_id`),\par
+  KEY `userinfo_id` (`userinfo_id`),\par
+  KEY `userinfo_blog_id` (`userinfo_blog_id`),\par
+  KEY `userinfo_comment_id` (`userinfo_comment_id`)\par
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;\par
+\par
+--\par
+-- Dumping data for table `userinfo`\par
+--\par
+\par
+}
+ 
